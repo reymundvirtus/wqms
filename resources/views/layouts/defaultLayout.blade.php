@@ -176,7 +176,7 @@
                         <li class="dropdown-divider"></li>
                         @auth
                             <li class="dropdown-item">
-                                <form action="{{ route('logout') }}" method="POST">
+                                <form action="/logout" method="POST">
                                     @csrf
                                     <button type="submit" style="padding: 0; border: none; background: none; color: #fff; width: 100%; text-align: left"><i class="icon-power mr-2"></i> Logout</button>
                                 </form>
