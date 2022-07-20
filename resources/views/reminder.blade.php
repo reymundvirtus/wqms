@@ -220,6 +220,8 @@
 
                 <div class="mt-3">
                     <div id='calendar'></div>
+                    <p class="mt-3">Note: To UPDATE the reminder, you need to drag and drop the reminder itself in the calendar cells.</p>
+                    <p class="mt-1">Note: To DELETE, just click the reminder in the cells and click yes.</p>
                 </div>
 
                 <!--start overlay-->
