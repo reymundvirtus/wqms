@@ -34,7 +34,7 @@
                     </div>
                     <div class="card-title text-uppercase text-center py-3">Sign In</div>
 
-                    <form action="{{ route('login') }}" method="POST">
+                    <form action="/login" method="POST">
                         @if (session('status'))
                             <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
                                 {{ session('status') }}
