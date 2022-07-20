@@ -9,24 +9,24 @@
     <meta name="author" content="" />
     <title>WQMS - Calendar</title>
     <!-- loader-->
-    <link href="{{ asset('css/pace.min.css') }}" rel="stylesheet" />
-    <script src="{{ asset('js/pace.min.js') }}"></script>
+    <link href="css/pace.min.css" rel="stylesheet" />
+    <script src="js/pace.min.js"></script>
     <!--favicon-->
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <!--Full Calendar Css-->
-    <link href="{{ asset('plugins/fullcalendar/css/fullcalendar.min.css') }}" rel='stylesheet' />
+    <link href="plugins/fullcalendar/css/fullcalendar.min.css" rel='stylesheet' />
     <!-- simplebar CSS-->
-    <link href="{{ asset('plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
+    <link href="plugins/simplebar/css/simplebar.css" rel="stylesheet" />
     <!-- Bootstrap core CSS-->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- animate CSS-->
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
     <!-- Icons CSS-->
-    <link href="{{ asset('css/icons.css') }}" rel="stylesheet" type="text/css" />
+    <link href="css/icons.css" rel="stylesheet" type="text/css" />
     <!-- Sidebar CSS-->
-    <link href="{{ asset('css/sidebar-menu.css') }}" rel="stylesheet" />
+    <link href="css/sidebar-menu.css" rel="stylesheet" />
     <!-- Custom Style-->
-    <link href="{{ asset('css/app-style.css') }}" rel="stylesheet" />
+    <link href="css/app-style.css" rel="stylesheet" />
 
 </head>
 
@@ -49,7 +49,7 @@
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="brand-logo">
                 <a href="{{ route('dashboard') }}">
-                    <img src="{{ asset('images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
+                    <img src="images/logo-icon.png" class="logo-icon" alt="logo icon">
                     <h5 class="logo-text">Water Quality MS</h5>
                 </a>
             </div>
@@ -62,19 +62,19 @@
                 </li>
 
                 {{-- <li>
-                    <a href="{{ route('icons') }}">
+                    <a href="{{ route('icons">
                         <i class="zmdi zmdi-invert-colors"></i> <span>UI Icons</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('forms') }}">
+                    <a href="{{ route('forms">
                         <i class="zmdi zmdi-format-list-bulleted"></i> <span>Forms</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('tables') }}">
+                    <a href="{{ route('tables">
                         <i class="zmdi zmdi-grid"></i> <span>Tables</span>
                     </a>
                 </li> --}}
@@ -93,13 +93,13 @@
                 </li>
 
                 {{-- <li>
-                    <a href="{{ route('login') }}" target="_blank">
+                    <a href="{{ route('login" target="_blank">
                         <i class="zmdi zmdi-lock"></i> <span>Login</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('register') }}" target="_blank">
+                    <a href="{{ route('register" target="_blank">
                         <i class="zmdi zmdi-account-circle"></i> <span>Registration</span>
                     </a>
                 </li>
@@ -160,7 +160,7 @@
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown"
                             href="#">
-                            <span class="user-profile"><img src="{{ asset('images/avatar.jpg') }}" class="img-circle"
+                            <span class="user-profile"><img src="images/avatar.jpg" class="img-circle"
                                     alt="user avatar"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -168,7 +168,7 @@
                                 <a href="javaScript:void();">
                                     <div class="media">
                                         <div class="avatar"><img class="align-self-start mr-3"
-                                                src="{{ asset('images/avatar.jpg') }}" alt="user avatar"></div>
+                                                src="images/avatar.jpg" alt="user avatar"></div>
                                         <div class="media-body">
                                             <h6 class="mt-2 user-title">{{ auth()->user()->name }}</h6>
                                             <p class="user-subtitle">{{ auth()->user()->email }}</p>
@@ -325,22 +325,22 @@
 
         <!-- Bootstrap core JavaScript-->
 
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/popper.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
         <!-- simplebar js -->
-        <script src="{{ asset('plugins/simplebar/js/simplebar.js') }}"></script>
+        <script src="plugins/simplebar/js/simplebar.js"></script>
         <!-- sidebar-menu js -->
-        <script src="{{ asset('js/sidebar-menu.js') }}"></script>
+        <script src="js/sidebar-menu.js"></script>
 
         <!-- Custom scripts -->
-        <script src="{{ asset('js/app-script.js') }}"></script>
+        <script src="js/app-script.js"></script>
 
         <!-- Full Calendar -->
-        <script src='{{ asset('plugins/fullcalendar/js/moment.min.js') }}'></script>
-        <script src='{{ asset('plugins/fullcalendar/js/fullcalendar.min.js') }}'></script>
-        <script src="{{ asset('plugins/fullcalendar/js/fullcalendar-custom-script.js') }}"></script>
+        <script src='plugins/fullcalendar/js/moment.min.js'></script>
+        <script src='plugins/fullcalendar/js/fullcalendar.min.js'></script>
+        <script src="plugins/fullcalendar/js/fullcalendar-custom-script.js"></script>
 
 </body>
 

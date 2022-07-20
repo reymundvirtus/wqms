@@ -30,7 +30,7 @@
             <div class="card-body">
                 <div class="card-content p-2">
                     <div class="text-center">
-                        <img class="mx-auto h-12 w-auto" src="{{ asset('images/logo-icon.png') }}" alt="logo icon">
+                        <img class="mx-auto h-12 w-auto" src="images/logo-icon.png" alt="logo icon">
                     </div>
                     <div class="card-title text-uppercase text-center py-3">Sign In</div>
 

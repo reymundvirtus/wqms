@@ -9,18 +9,18 @@
     <meta name="author" content="" />
     <title>@yield('title')</title>
     <!-- loader-->
-    <link href="{{ asset('css/pace.min.css') }}" rel="stylesheet" />
-    <script src="{{ asset('js/pace.min.js') }}"></script>
+    <link href="css/pace.min.css" rel="stylesheet" />
+    <script src="js/pace.min.js"></script>
     <!--favicon-->
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Bootstrap core CSS-->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- animate CSS-->
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/icons.css') }}" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/icons.css" rel="stylesheet" type="text/css" />
     <!-- Custom Style-->
-    <link href="{{ asset('css/app-style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+    <link href="css/app-style.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
 
 </head>
 
@@ -71,13 +71,13 @@
     <!--end color switcher--> --}}
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- sidebar-menu js -->
-    <script src="{{ asset('js/sidebar-menu.js') }}"></script>
-    <script src="{{ asset('js/app-script.js') }}"></script>
+    <script src="js/sidebar-menu.js"></script>
+    <script src="js/app-script.js"></script>
 
 </body>
 

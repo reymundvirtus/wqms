@@ -12,7 +12,7 @@
     <meta name="keywords" content="" />
     <meta name="author" content="" />
     <!--favicon-->
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
@@ -92,7 +92,7 @@
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 py-20 text-center">
-                <img class="w-full md:w-4/5 z-50" src="{{ asset('images/hero.png') }}" />
+                <img class="w-full md:w-4/5 z-50" src="images/hero.png') }}" />
             </div>
         </div>
     </div>
