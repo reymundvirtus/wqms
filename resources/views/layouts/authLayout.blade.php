@@ -12,7 +12,7 @@
     <link href="{{ asset('css/pace.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('js/pace.min.js') }}"></script>
     <!--favicon-->
-    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- animate CSS-->
