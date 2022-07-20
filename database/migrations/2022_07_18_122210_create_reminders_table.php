@@ -15,12 +15,12 @@ class CreateRemindersTable extends Migration
     {
         Schema::create('reminders', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title', 20);
             $table->dateTime('start');
             $table->dateTime('end');
             $table->foreignId('user_id')->constrained();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamp('updated_at');
         });
     }
 

@@ -385,21 +385,21 @@
                                         <label for="titleu">Title</label>
                                         <div class="position-relative has-icon-right">
                                             <input type="text" id="titleu" name="titleu"
-                                                class="form-control input-shadow">
+                                                class="form-control input-shadow" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="startu">Start</label>
                                         <div class="position-relative has-icon-right">
                                             <input type="datetime-local" id="startu" name="startu"
-                                                class="form-control input-shadow">
+                                                class="form-control input-shadow" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="endu">End</label>
                                         <div class="position-relative has-icon-right">
                                             <input type="datetime-local" id="endu" name="endu"
-                                                class="form-control input-shadow">
+                                                class="form-control input-shadow" required>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn card-hover" data-bs-dismiss="modal"
@@ -407,55 +407,6 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {{-- Modal for Read --}}
-        <div class="modal fade" id="readReminder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content" style="background-color: rgba(67, 56, 202, 1)">
-                    <div class="card card-authentication1 mx-auto my-4">
-                        <div class="card-body">
-                            <div class="card-content p-2">
-                                <div class="card-title text-uppercase text-center py-3">Reminder Details</div>
-                                <form>
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="titler">Title</label>
-                                        <div class="position-relative has-icon-right">
-                                            <input type="text" id="titler" name="titler"
-                                                class="form-control input-shadow" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="startr">Start</label>
-                                        <div class="position-relative has-icon-right">
-                                            <input type="text" id="startr" name="startr"
-                                                class="form-control input-shadow" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="endr">End</label>
-                                        <div class="position-relative has-icon-right">
-                                            <input type="text" id="endr" name="endr"
-                                                class="form-control input-shadow" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="dater">Created At</label>
-                                        <div class="position-relative has-icon-right">
-                                            <input type="text" id="dater" name="dater"
-                                                class="form-control input-shadow" readonly>
-                                        </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
                     </div>
                 </div>
             </div>

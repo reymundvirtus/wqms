@@ -79,21 +79,21 @@
                                     <label for="nameu">Name</label>
                                     <div class="position-relative has-icon-right">
                                         <input type="text" id="nameu"
-                                            class="form-control input-shadow">
+                                            class="form-control input-shadow" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="emailu">Email</label>
                                     <div class="position-relative has-icon-right">
                                         <input type="text" id="emailu"
-                                            class="form-control input-shadow">
+                                            class="form-control input-shadow" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="passwordu">Password</label>
                                     <div class="position-relative has-icon-right">
                                         <input type="text" id="passwordu"
-                                            class="form-control input-shadow" value=" ">
+                                            class="form-control input-shadow" value=" " required>
                                     </div>
                                 </div>
                                 <p class="text-red-500 font-bold">Note: Put your current or new password before clicking

@@ -33,7 +33,7 @@
                             <div class="position-relative has-icon-right">
                                 <input type="text" id="name" name="name"
                                     class="form-control input-shadow @error('name') border-red-500 @enderror"
-                                    value="{{ old('name') }}" placeholder="Enter Your Name">
+                                    value="{{ old('name') }}" placeholder="Enter Your Name" required>
                                 @error('name')
                                     <div class="text-red-500 mt-2 ml-2">
                                         {{ $message }}
@@ -49,7 +49,7 @@
                             <div class="position-relative has-icon-right">
                                 <input type="text" id="email" name="email"
                                     class="form-control input-shadow @error('email') border-red-500 @enderror"
-                                    value="{{ old('email') }}" placeholder="Enter Your Email">
+                                    value="{{ old('email') }}" placeholder="Enter Your Email" required>
                                 @error('email')
                                     <div class="text-red-500 mt-2 ml-2">
                                         {{ $message }}
@@ -65,7 +65,7 @@
                             <div class="position-relative has-icon-right">
                                 <input type="password" id="password" name="password"
                                     class="form-control input-shadow @error('password') border-red-500 @enderror"
-                                    value="{{ old('password') }}" placeholder="Password">
+                                    value="{{ old('password') }}" placeholder="Password" required>
                                 @error('password')
                                     <div class="text-red-500 mt-2 ml-2">
                                         {{ $message }}
@@ -81,7 +81,7 @@
                             <div class="position-relative has-icon-right">
                                 <input type="password" id="password_confirmation" name="password_confirmation"
                                     class="form-control input-shadow @error('password_confirmation') border-red-500 @enderror"
-                                    value="{{ old('password_confirmation') }}" placeholder="Confirm Password">
+                                    value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required>
                                 @error('password_confirmation')
                                     <div class="text-red-500 mt-2 ml-2">
                                         {{ $message }}
