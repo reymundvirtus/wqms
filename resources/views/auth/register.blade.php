@@ -26,7 +26,7 @@
                     </div>
                     <div class="card-title text-uppercase text-center py-3">Sign Up</div>
 
-                    <form action="{{ route('register') }}" method="POST">
+                    <form action="/register" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="name" class="sr-only">Name</label>
