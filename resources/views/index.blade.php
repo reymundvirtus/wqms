@@ -16,26 +16,19 @@
                     <div class="card-content">
                         <div class="row row-group m-0">
                             <div class="col-12 col-lg-6 col-xl-3 border-light">
-                                <div class="card-body">
-                                    <h5 class="text-white mb-0">23.7 °C <span class="float-right"><i
-                                            class="fa fa-thermometer-half"></i></span></h5>
-                                    <div class="progress my-3" style="height:3px;">
-                                        <div class="progress-bar" style="width:55%"></div>
-                                    </div>
-                                    <p class="mb-0 text-white small-font">Temprature <span class="float-right">+4.2%
-                                            <i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                                <div class="card-body" id="temperature">
+                                    
+                                    
+                                    {{-- <span class="float-right">+4.2%
+                                            <i class="zmdi zmdi-long-arrow-up"></i></span></p> --}}
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 col-xl-3 border-light">
-                                <div class="card-body">
-                                    <h5 class="text-white mb-0">7.35 pH<span class="float-right"><i
-                                                class="fa fa-tachometer"></i></span></h5>
-                                    <div class="progress my-3" style="height:3px;">
-                                        <div class="progress-bar" style="width:55%"></div>
-                                    </div>
-                                    <p class="mb-0 text-white small-font">pH Level <span
+                                <div class="card-body" id="temppH">
+
+                                        {{-- <span
                                             class="float-right">+1.2% <i class="zmdi zmdi-long-arrow-up"></i></span>
-                                    </p>
+                                    </p> --}}
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 col-xl-3 border-light">
@@ -43,10 +36,11 @@
                                     <h5 class="text-white mb-0">6200 O2<span class="float-right"><i
                                                 class="fa fa-eyedropper"></i></span></h5>
                                     <div class="progress my-3" style="height:3px;">
-                                        <div class="progress-bar" style="width:55%"></div>
+                                        <div class="progress-bar" style="width:100%"></div>
                                     </div>
-                                    <p class="mb-0 text-white small-font">Dissolved Oxygen <span class="float-right">+5.2% <i
-                                                class="zmdi zmdi-long-arrow-up"></i></span></p>
+                                    <p class="mb-0 text-white small-font">Dissolved Oxygen </p>
+                                        {{-- <span class="float-right">+5.2% <i
+                                                class="zmdi zmdi-long-arrow-up"></i></span></p> --}}
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 col-xl-3 border-light">
@@ -54,10 +48,11 @@
                                     <h5 class="text-white mb-0">5630 ‰<span class="float-right"><i
                                                 class="fa fa-hourglass-half"></i></span></h5>
                                     <div class="progress my-3" style="height:3px;">
-                                        <div class="progress-bar" style="width:55%"></div>
+                                        <div class="progress-bar" style="width:100%"></div>
                                     </div>
-                                    <p class="mb-0 text-white small-font">Salinity <span class="float-right">+2.2% <i
-                                                class="zmdi zmdi-long-arrow-up"></i></span></p>
+                                    <p class="mb-0 text-white small-font">Salinity </p>
+                                        {{-- <span class="float-right">+2.2% <i
+                                                class="zmdi zmdi-long-arrow-up"></i></span></p> --}}
                                 </div>
                             </div>
                         </div>
@@ -67,7 +62,9 @@
                 <div class="row">
                     <div class="col-12 col-lg-8 col-xl-8">
                         <div class="card">
-                            <div class="card-header">Recent Readings
+
+                            {{-- for temperature value --}}
+                            <div class="card-header">Recent Readings Temperature in Celsius
                                 <div class="card-action">
                                     <div class="dropdown">
                                         <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret"
@@ -93,6 +90,36 @@
                                 </ul> --}}
                                 <div class="chart-container-1">
                                     <canvas id="chart1"></canvas>
+                                </div>
+                            </div>
+
+                            {{-- for pH value --}}
+                            <div class="card-header">Recent Readings pH
+                                <div class="card-action">
+                                    <div class="dropdown">
+                                        <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret"
+                                            data-toggle="dropdown">
+                                            <i class="icon-options"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void();">Action</a>
+                                            <a class="dropdown-item" href="javascript:void();">Another action</a>
+                                            <a class="dropdown-item" href="javascript:void();">Something else here</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="javascript:void();">Separated link</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                {{-- <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="fa fa-circle mr-2 text-white"></i>New
+                                        Visitor</li>
+                                    <li class="list-inline-item"><i class="fa fa-circle mr-2 text-light"></i>Old
+                                        Visitor</li>
+                                </ul> --}}
+                                <div class="chart-container-1">
+                                    <canvas id="chart1_1"></canvas>
                                 </div>
                             </div>
 
@@ -320,4 +347,58 @@
 
         </div>
         <!--End content-wrapper-->
+
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                get_temperature()
+
+                function get_temperature() {
+
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'json',
+                        url: 'tempc',
+                        success: function(data) {
+
+                            let html
+
+                            for (let i = 0; i < data.length; i++) {
+                                html += '<h5 class="text-white mb-0">' + data[i].temperature_c + '°C <span class="float-right"><i class="fa fa-thermometer-half"></i></span></h5>'
+                                html += '<div class="progress my-3" style="height:3px;"><div class="progress-bar" style="width:100%"></div></div><p class="mb-0 text-white small-font">Temprature</p>'
+                            }
+
+                            $('#temperature').html(html.substr(9))
+                        }
+                    });
+
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'json',
+                        url: 'temppH',
+                        success: function(data) {
+
+                            let html
+
+                            for (let i = 0; i < data.length; i++) {
+                                html += '<h5 class="text-white mb-0">' + data[i].temperature_pH + '°C <span class="float-right"><i class="fa fa-thermometer-half"></i></span></h5>'
+                                html += '<div class="progress my-3" style="height:3px;"><div class="progress-bar" style="width:100%"></div></div><p class="mb-0 text-white small-font">pH Level</p>'
+                            }
+
+                            $('#temppH').html(html.substr(9))
+                            setTimeout(get_temperature, 1000)
+                        }
+                    });
+
+                    return false;
+                }
+            
+            })
+        </script>
 @endsection

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRemindersTable extends Migration
+class CreateTemperaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateRemindersTable extends Migration
      */
     public function up()
     {
-        Schema::create('reminders', function (Blueprint $table) {
+        Schema::create('temperatures', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 20);
-            $table->dateTime('start');
-            $table->dateTime('end');
-            $table->foreignId('user_id')->constrained();
+            $table->string('temperature_c', 10);
+            $table->string('temperature_f', 10);
+            $table->string('temperature_pH', 10);
+            // $table->string('temperature_salanity', 10);
+            // $table->string('temperature_O2', 10);
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
@@ -31,6 +31,6 @@ class CreateRemindersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reminders');
+        Schema::dropIfExists('temperatures');
     }
 }

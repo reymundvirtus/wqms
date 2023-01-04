@@ -9,8 +9,8 @@
     <meta name="author" content="" />
     <title>@yield('title')</title>
     <!-- loader-->
-    <link href="css/pace.min.css" rel="stylesheet" />
-    <script src="js/pace.min.js"></script>
+    {{-- <link href="css/pace.min.css" rel="stylesheet" />
+    <script src="js/pace.min.js"></script> --}}
     <!--favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Vector CSS -->
@@ -51,6 +51,12 @@
                 <li>
                     <a href="{{ route('dashboard') }}">
                         <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ route('analytics') }}">
+                        <i class="zmdi zmdi-soundcloud"></i> <span>Analytics</span>
                     </a>
                 </li>
 
