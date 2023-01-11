@@ -39,4 +39,28 @@ class TemperatureController extends Controller
 
         return response()->json($temppH);
     }
+
+    //? get tempc for today
+    public function get_tempc_today() {
+
+        $tempc = DB::select("SELECT ROUND(SUM(temperature_c) / COUNT(temperature_c), 2) as total_tempc FROM temperatures WHERE DATE(created_at) = '2023-01-04'"); // '2023-01-04' or date('Y-m-d')
+
+        return response()->json($tempc);
+    }
+
+    //? get pH for today
+    public function get_temppH_today() {
+
+        $temppH = DB::select("SELECT ROUND(SUM(temperature_pH) / COUNT(temperature_pH), 2) as total_temppH FROM temperatures WHERE DATE(created_at) = '2023-01-04'"); // '2023-01-04' or date('Y-m-d')
+
+        return response()->json($temppH);
+    }
+
+    //? get x & y
+    public function get_x_y() {
+
+        $x_y = DB::select("SELECT ROUND(AVG(temperature_c) OVER(), 2) as x, ROUND(AVG(temperature_f) OVER(), 2) as y FROM temperatures");
+
+        return response()->json($x_y);
+    }
 }

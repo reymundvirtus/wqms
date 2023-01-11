@@ -251,8 +251,6 @@
                     for (let i = 0; i < data.length; i++) {
                         myChart.data.labels.push(data[i].temperature_f + "°F");
                         myChart.data.datasets[0].data.push(data[i].temperature_f);
-                        a = data[i].temperature_f;
-                        console.log(a)
                     }
 
                     myChart.update();

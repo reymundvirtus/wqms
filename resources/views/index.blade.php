@@ -11,7 +11,8 @@
             <div class="container-fluid">
 
                 <!--Start Dashboard Content-->
-                <h4 class="sidebar-header">DASHBOARD</h4>
+                <h4 class="sidebar-header">DASHBOARD</h4><br>
+                <h6>Readings for today!</h6>
                 <div class="card mt-3">
                     <div class="card-content">
                         <div class="row row-group m-0">
@@ -121,6 +122,18 @@
                                 <div class="chart-container-1">
                                     <canvas id="chart1_1"></canvas>
                                 </div>
+                            </div>
+                            <div class="card-body">
+                                {{-- <ul class="list-inline">
+                                    <li class="list-inline-item"><i class="fa fa-circle mr-2 text-white"></i>New
+                                        Visitor</li>
+                                    <li class="list-inline-item"><i class="fa fa-circle mr-2 text-light"></i>Old
+                                        Visitor</li>
+                                </ul> --}}
+
+                                {{-- <div class="chart-container-1">
+                                    <canvas id="plotted"></canvas>
+                                </div> --}}
                             </div>
 
                             {{-- <div class="row m-0 row-group text-center border-top border-light-3">
@@ -358,19 +371,20 @@
                 });
 
                 get_temperature()
+                get_x_y()
 
                 function get_temperature() {
 
                     $.ajax({
                         type: 'GET',
                         dataType: 'json',
-                        url: 'tempc',
+                        url: 'tempc-today',
                         success: function(data) {
 
                             let html
 
                             for (let i = 0; i < data.length; i++) {
-                                html += '<h5 class="text-white mb-0">' + data[i].temperature_c + '°C <span class="float-right"><i class="fa fa-thermometer-half"></i></span></h5>'
+                                html += '<h5 class="text-white mb-0">' + data[i].total_tempc + '°C <span class="float-right"><i class="fa fa-thermometer-half"></i></span></h5>'
                                 html += '<div class="progress my-3" style="height:3px;"><div class="progress-bar" style="width:100%"></div></div><p class="mb-0 text-white small-font">Temprature</p>'
                             }
 
@@ -381,13 +395,13 @@
                     $.ajax({
                         type: 'GET',
                         dataType: 'json',
-                        url: 'temppH',
+                        url: 'temppH-today',
                         success: function(data) {
 
                             let html
 
                             for (let i = 0; i < data.length; i++) {
-                                html += '<h5 class="text-white mb-0">' + data[i].temperature_pH + '°C <span class="float-right"><i class="fa fa-thermometer-half"></i></span></h5>'
+                                html += '<h5 class="text-white mb-0">' + data[i].total_temppH + ' pH <span class="float-right"><i class="fa fa-thermometer-half"></i></span></h5>'
                                 html += '<div class="progress my-3" style="height:3px;"><div class="progress-bar" style="width:100%"></div></div><p class="mb-0 text-white small-font">pH Level</p>'
                             }
 
@@ -399,6 +413,81 @@
                     return false;
                 }
             
+                // plotted chart
+
+                var ctx = document.getElementById('plotted').getContext('2d');
+                        
+                var plotChart = new Chart(ctx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: 'Temperature',
+                            pointRadius: 2,
+                            pointBackgroundColor: "#fff",
+                            data: []
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        legend: {
+                        display: false,
+                        labels: {
+                            fontColor: '#ddd',  
+                            boxWidth:40
+                        }
+                        },
+                        tooltips: {
+                        displayColors:false
+                        },	
+                    scales: {
+                        xAxes: [{
+                            type: 'linear',
+                            ticks: {
+                                beginAtZero:true,
+                                fontColor: '#ddd'
+                            },
+                            gridLines: {
+                            display: true ,
+                            color: "rgba(221, 221, 221, 0.08)"
+                            },
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true,
+                                fontColor: '#ddd'
+                            },
+                            gridLines: {
+                            display: true ,
+                            color: "rgba(221, 221, 221, 0.08)"
+                            },
+                        }]
+                    }
+            
+                    }
+                });
+
+                function get_x_y() {
+
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'json',
+                        url: 'get-x-y',
+                        success: function(data) {
+
+                            for (let i = 0; i < data.length; i++) {
+                                // plotChart.data.labels.push(data[i].x);
+                                // plotChart.data.datasets[0].data.push(data[i].y);
+                                plotChart.data.datasets[0].data.x[i].push(data[i].x)
+                                console.log(plotChart.data.datasets[0].data.y[i].push(data[i].y))
+                            }
+                            
+                            plotChart.update();
+                            setTimeout(get_x_y, 1000)
+                        }
+                    });
+
+                    return false;
+                }
             })
         </script>
 @endsection

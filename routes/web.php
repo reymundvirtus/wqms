@@ -53,3 +53,10 @@ Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 //? getting the temperatures
 Route::get('/tempc', [TemperatureController::class, 'get_tempc']);
 Route::get('/temppH', [TemperatureController::class, 'get_temppH']);
+
+//? getting the temperatures for today
+Route::get('/tempc-today', [TemperatureController::class, 'get_tempc_today']);
+Route::get('/temppH-today', [TemperatureController::class, 'get_temppH_today']);
+
+//? linear regression
+Route::get('/get-x-y', [TemperatureController::class, 'get_x_y']);
