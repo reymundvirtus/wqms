@@ -81,7 +81,7 @@
             <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
                 {{-- <p class="uppercase tracking-loose w-full">What business are you?</p> --}}
                 <h1 class="my-4 text-5xl font-bold leading-tight">
-                    WATER QUALITY MONITONG SYSTEM
+                    WATER QUALITY MONITORING SYSTEM
                 </h1>
                 <p class="leading-normal text-2xl mb-8">
                     A system that monitors the water of Tinambac Agri Fishery.

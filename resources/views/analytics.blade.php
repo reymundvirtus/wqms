@@ -290,15 +290,15 @@
 
                     for (let i = 0; i < data.length; i++) {
                         if (data[i].temperature_f < 47.00 && data[i].temperature_f > 40.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-warning">Cold</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="Please do action ASAP, fishes might die in this situation"><small class="badge badge-warning">Cold</small></h5><small class="mb-0">Indicator</small>'
                         } else if (data[i].temperature_f < 40.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-danger">Too Cold</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="Please do action ASAP, fishes will SURELY DIE in this situation"><small class="badge badge-danger">Too Cold</small></h5><small class="mb-0">Indicator</small>'
                         } else if (data[i].temperature_f > 47.00 && data[i].temperature_f < 90.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-success">Normal</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="Temperature is normal"><small class="badge badge-success">Normal</small></h5><small class="mb-0">Indicator</small>'
                         } else if (data[i].temperature_f > 90.00 && data[i].temperature_f < 100.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-warning">Warm</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="Please do action ASAP, fishes might die in this situation"><small class="badge badge-warning">Warm</small></h5><small class="mb-0">Indicator</small>'
                         } else if (data[i].temperature_f > 100.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-danger">Too Hot</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="Please do action ASAP, fishes will SURELY DIE in this situation"><small class="badge badge-danger">Too Hot</small></h5><small class="mb-0">Indicator</small>'
                         }
                     }
 
@@ -393,11 +393,11 @@
 
                     for (let i = 0; i < data.length; i++) {
                         if (data[i].temperature_pH < 6.00 && data[i].temperature_pH > 3.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-warning">Warm Acid</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="Please do action ASAP, fishes might die in this situation"><small class="badge badge-warning">Warm Acid</small></h5><small class="mb-0">Indicator</small>'
                         } else if (data[i].temperature_pH < 3.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-danger">Acidic</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="Please do action ASAP, fishes will SURELY DIE in this situation"><small class="badge badge-danger">Acidic</small></h5><small class="mb-0">Indicator</small>'
                         } else if (data[i].temperature_pH > 6.00) {
-                            html += '<h5 class="mb-0"><small class="badge badge-success">Normal</small></h5><small class="mb-0">Indicator</small>'
+                            html += '<h5 class="mb-0" data-cooltipz-dir="bottom" data-cooltipz-size="medium" aria-label="pH level is normal"><small class="badge badge-success">Normal</small></h5><small class="mb-0">Indicator</small>'
                         }
                     }
 

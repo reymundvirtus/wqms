@@ -73,6 +73,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('analytics') }}">
+                        <i class="zmdi zmdi-soundcloud"></i> <span>Analytics</span>
+                    </a>
+                </li>
+
                 {{-- <li>
                     <a href="{{ route('icons">
                         <i class="zmdi zmdi-invert-colors"></i> <span>UI Icons</span>
