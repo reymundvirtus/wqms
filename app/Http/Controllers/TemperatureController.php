@@ -13,6 +13,8 @@ class TemperatureController extends Controller
             'temperature_c' => $request->temperature_c,
             'temperature_f' => $request->temperature_f,
             'temperature_pH' => $request->temperature_pH,
+            'temperature_moist' => $request->temperature_moist,
+            'temperature_salanity' => $request->temperature_salanity,
         ]);
 
         return response()->json($insert_temp);
@@ -40,6 +42,19 @@ class TemperatureController extends Controller
         return response()->json($temppH);
     }
 
+    public function get_tempm() {
+
+        $tempm = DB::table('temperatures')
+            ->select('temperature_moist')
+            ->orderByRaw('created_at DESC LIMIT 1')
+            ->get();
+
+        return response()->json($tempm);
+    }
+
+
+    //! TEMPERATURE FOR TODAY'S VIDEOWWW
+
     //? get tempc for today
     public function get_tempc_today() {
 
@@ -55,6 +70,16 @@ class TemperatureController extends Controller
 
         return response()->json($temppH);
     }
+
+    //? get moisture for today
+    public function get_tempm_today() {
+
+        $tempm = DB::select("SELECT ROUND(SUM(temperature_moist) / COUNT(temperature_moist), 2) as total_tempm FROM temperatures WHERE DATE(created_at) = '2023-01-04'"); // '2023-01-04' or date('Y-m-d')
+
+        return response()->json($tempm);
+    }
+
+    //! FOR LINEAR REGRESSION
 
     //? get x & y
     public function get_x_y() {

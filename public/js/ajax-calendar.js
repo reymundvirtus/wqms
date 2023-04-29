@@ -31,6 +31,7 @@ function get_reminders() {
             }
 
             $('#get_reminders').html(html.substr(9))
+            setTimeout(get_reminders, 1000)
         }
     });
 

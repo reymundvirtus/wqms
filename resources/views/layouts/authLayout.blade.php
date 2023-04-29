@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
+    <meta name="description" content="Water Quality Monitoring System for Agri Fisheries of Tinambac Camarines Sur (WQMS)" />
     <meta name="author" content="" />
+    <meta name="keywords" content="Water Quality, Monitoring System, WQMS, Tinambac, Camarines Sur, Fisheries">
     <title>@yield('title')</title>
     <!-- loader-->
     <link href="css/pace.min.css" rel="stylesheet" />

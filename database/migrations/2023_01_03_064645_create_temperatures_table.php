@@ -18,7 +18,8 @@ class CreateTemperaturesTable extends Migration
             $table->string('temperature_c', 10);
             $table->string('temperature_f', 10);
             $table->string('temperature_pH', 10);
-            // $table->string('temperature_salanity', 10);
+            $table->string('temperature_moist', 10);
+            $table->string('temperature_salanity', 10);
             // $table->string('temperature_O2', 10);
             $table->timestamp('created_at')->useCurrent();
         });

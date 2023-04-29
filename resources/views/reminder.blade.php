@@ -528,7 +528,7 @@
                         let id = calEvent.id
                         console.log(start_date, end_date, id)
                         $.ajax({
-                            type: 'PATCH',
+                            type: 'POST',
                             dataType: 'json',
                             url: '/calendar/update' + '/' + id,
                             data: {
@@ -582,7 +582,7 @@
                             if (result.isConfirmed) {
 
                                 $.ajax({
-                                    type: 'DELETE',
+                                    type: 'POST',
                                     dataType: 'json',
                                     url: '/calendar/delete' + '/' + id,
                                     success: function(response) {

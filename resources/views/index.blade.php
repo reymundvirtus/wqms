@@ -16,7 +16,7 @@
                 <div class="card mt-3">
                     <div class="card-content">
                         <div class="row row-group m-0">
-                            <div class="col-12 col-lg-6 col-xl-3 border-light">
+                            <div class="col-12 col-lg-6 col-xl-4 border-light">
                                 <div class="card-body" id="temperature">
                                     
                                     
@@ -24,7 +24,7 @@
                                             <i class="zmdi zmdi-long-arrow-up"></i></span></p> --}}
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6 col-xl-3 border-light">
+                            <div class="col-12 col-lg-6 col-xl-4 border-light">
                                 <div class="card-body" id="temppH">
 
                                         {{-- <span
@@ -32,19 +32,12 @@
                                     </p> --}}
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6 col-xl-3 border-light">
-                                <div class="card-body">
-                                    <h5 class="text-white mb-0">6200 O2<span class="float-right"><i
-                                                class="fa fa-eyedropper"></i></span></h5>
-                                    <div class="progress my-3" style="height:3px;">
-                                        <div class="progress-bar" style="width:100%"></div>
-                                    </div>
-                                    <p class="mb-0 text-white small-font">Dissolved Oxygen </p>
-                                        {{-- <span class="float-right">+5.2% <i
-                                                class="zmdi zmdi-long-arrow-up"></i></span></p> --}}
+                            <div class="col-12 col-lg-6 col-xl-4 border-light">
+                                <div class="card-body" id="tempm">
+
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-6 col-xl-3 border-light">
+                            {{-- <div class="col-12 col-lg-6 col-xl-3 border-light">
                                 <div class="card-body">
                                     <h5 class="text-white mb-0">5630 ‰<span class="float-right"><i
                                                 class="fa fa-hourglass-half"></i></span></h5>
@@ -53,9 +46,9 @@
                                     </div>
                                     <p class="mb-0 text-white small-font">Salinity </p>
                                         {{-- <span class="float-right">+2.2% <i
-                                                class="zmdi zmdi-long-arrow-up"></i></span></p> --}}
+                                                class="zmdi zmdi-long-arrow-up"></i></span></p> 
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -401,11 +394,28 @@
                             let html
 
                             for (let i = 0; i < data.length; i++) {
-                                html += '<h5 class="text-white mb-0">' + data[i].total_temppH + ' pH <span class="float-right"><i class="fa fa-thermometer-half"></i></span></h5>'
+                                html += '<h5 class="text-white mb-0">' + data[i].total_temppH + ' pH <span class="float-right"><i class="fa fa-tint"></i></span></h5>'
                                 html += '<div class="progress my-3" style="height:3px;"><div class="progress-bar" style="width:100%"></div></div><p class="mb-0 text-white small-font">pH Level</p>'
                             }
 
                             $('#temppH').html(html.substr(9))
+                        }
+                    });
+
+                    $.ajax({
+                        type: 'GET',
+                        dataType: 'json',
+                        url: 'tempm-today',
+                        success: function(data) {
+
+                            let html
+
+                            for (let i = 0; i < data.length; i++) {
+                                html += '<h5 class="text-white mb-0">' + data[i].total_tempm + ' % <span class="float-right"><i class="fa fa-tint"></i></span></h5>'
+                                html += '<div class="progress my-3" style="height:3px;"><div class="progress-bar" style="width:100%"></div></div><p class="mb-0 text-white small-font">Moisture</p>'
+                            }
+
+                            $('#tempm').html(html.substr(9))
                             setTimeout(get_temperature, 1000)
                         }
                     });

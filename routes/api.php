@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnalyticsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,3 +12,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //? api for sendeng temp into db
 Route::post('/insert', [TemperatureController::class, 'insert_temp']);
+
+//? for notification
+Route::post('/send-notif', [AnalyticsController::class, 'sendNotification']);

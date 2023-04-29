@@ -28,3 +28,4 @@ class DS18B20 // : public DallasTemperature //- uncomment for inheritance
 };
 
 #endif //_DS18B20_H_
+

@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
+    <meta name="description" content="Water Quality Monitoring System for Agri Fisheries of Tinambac Camarines Sur (WQMS)" />
     <meta name="author" content="" />
+    <meta name="keywords" content="Water Quality, Monitoring System, WQMS, Tinambac, Camarines Sur, Fisheries">
     <title>@yield('title')</title>
     <!-- loader-->
     {{-- <link href="css/pace.min.css" rel="stylesheet" />
@@ -49,13 +50,13 @@
             </div>
             <ul class="sidebar-menu do-nicescrol">
                 <li class="sidebar-header">MAIN NAVIGATION</li>
-                <li>
+                <li {{ request()->route()->getName() === 'dashboard' ? ' class="active"' : '' }}>
                     <a href="{{ route('dashboard') }}">
                         <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
 
-                <li>
+                <li {{ request()->route()->getName() === 'analytics' ? ' class="active"' : '' }}>
                     <a href="{{ route('analytics') }}">
                         <i class="zmdi zmdi-soundcloud"></i> <span>Analytics</span>
                     </a>
@@ -79,14 +80,14 @@
                     </a>
                 </li> --}}
 
-                <li>
+                <li {{ request()->route()->getName() === 'calendar' ? ' class="active"' : '' }}>
                     <a href="{{ route('calendar') }}">
                         <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
                         {{-- <small class="badge float-right badge-light">New</small> --}}
                     </a>
                 </li>
 
-                <li>
+                <li {{ request()->route()->getName() === 'profile' ? ' class="active"' : '' }}>
                     <a href="{{ route('profile') }}">
                         <i class="zmdi zmdi-face"></i> <span>Profiles</span>
                     </a>
