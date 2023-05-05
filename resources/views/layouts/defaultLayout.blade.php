@@ -56,11 +56,11 @@
                     </a>
                 </li>
 
-                <li {{ request()->route()->getName() === 'analytics' ? ' class="active"' : '' }}>
+                {{-- <li {{ request()->route()->getName() === 'analytics' ? ' class="active"' : '' }}>
                     <a href="{{ route('analytics') }}">
                         <i class="zmdi zmdi-soundcloud"></i> <span>Analytics</span>
                     </a>
-                </li>
+                </li> --}}
 
                 {{-- <li>
                     <a href="{{ route('icons">

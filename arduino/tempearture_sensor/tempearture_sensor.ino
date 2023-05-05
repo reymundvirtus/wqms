@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include <Ethernet.h>
-#include <SPI.h>
+// #include <SPI.h>
 #include "DS18B20.h"
 
 // Pin Definitions
@@ -22,7 +22,7 @@ float CalibrationTemp = 21.0;	//This is the temperature from which calibration i
 float CorrectionFactor = 1.02;	//Correction factor found by us. Change if needed
 
 // object initialization
-DS18B20 ds18b20wp(DS18B20WP_PIN_DQ);
+DS18B20 ds18b20wp(DS18B20WP_PIN_DQ);//148132
 
 float calibration_value = 28.00; //21.34
 int phval = 0; 
@@ -49,7 +49,7 @@ void loop() {
 
   int    HTTP_PORT   = 80;
   String HTTP_METHOD = "GET";
-  char   HOST_NAME[] = "192.168.100.10"; // change to your PC's IP address // 192.168.254.114 // 192.168.100.17
+  char   HOST_NAME[] = "192.168.100.17"; // change to your PC's IP address // 192.168.254.114 // 192.168.100.17 // 192.168.100.10
   String PATH_NAME   = "/water_quality_ms/arduino/api.php"; //rfid_insert_user.php
   String val = "?tempc=";
   String val1 = "&tempf=";
@@ -77,7 +77,6 @@ void loop() {
     Serial.print(F("Temp Celsius: ")); Serial.print(ds18b20wpTempC); Serial.println(F(" [C]"));
     Serial.print(F("Temp Fahrenheit: ")); Serial.print(ds18b20wpTempF); Serial.println(F(" [F]"));
     
-
     // For pH Sensor
     for(int i=0;i<10;i++) { 
       buffer_arr[i]=analogRead(A0);
@@ -128,14 +127,16 @@ void loop() {
       }
     }
     avg = tot/samples;
+    Serial.print("Average resistance: " + String(avg));
 
-    float dTemp = ds18b20wpTempC - CalibrationTemp;
-    avg = avg * pow(CorrectionFactor, dTemp);
-    Serial.print("Corrected resistance is: " + String(avg));    
+    // float dTemp = ds18b20wpTempC - CalibrationTemp;
+    // avg = avg * pow(CorrectionFactor, dTemp);
+    // // float sal = avg / 1000;
+    // Serial.print("Corrected resistance is: " + String(avg)); // 122162 // 
 
     String tempc = String(ds18b20wpTempC);
     String tempf = String(ds18b20wpTempF);
-    String temppH = String(ph_act);    
+    String temppH = String(ph_act);
     String tempmoist = String(rain);
     String salanity = String(avg);
   
@@ -159,7 +160,7 @@ void loop() {
     //Serial.println("disconnected");
   } else {// if not connected:
     Serial.println("connection failed");
-    Serial.println(Ethernet.localIP());
+    // Serial.println(Ethernet.localIP());
 }  
 
   

@@ -27,7 +27,7 @@ Route::post('/register', [RegisterController::class, 'store']); //? Storing new 
 Route::middleware(['auth'])->group(function() {
     Route::get('/home', [Dashboard::class, 'index'])->name('dashboard');
     Route::get('/profile', [Profile::class, 'index'])->name('profile');
-    Route::get('/analytics', [AnalyticsController::class, 'index'])->name('analytics');
+    // Route::get('/analytics', [AnalyticsController::class, 'index'])->name('analytics');
     Route::get('/reset-password', [ResetPassword::class, 'index'])->name('reset-password');
     Route::get('/tables', [Tables::class, 'index'])->name('tables');
     Route::get('/icons', [Icons::class, 'index'])->name('icons');
@@ -53,14 +53,10 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
     //? getting the temperatures
-    Route::get('/tempc', [TemperatureController::class, 'get_tempc']);
-    Route::get('/temppH', [TemperatureController::class, 'get_temppH']);
-    Route::get('/tempm', [TemperatureController::class, 'get_tempm']);
+    Route::get('/all-temp', [TemperatureController::class, 'get_all_temp']);
 
     //? getting the temperatures for today
-    Route::get('/tempc-today', [TemperatureController::class, 'get_tempc_today']);
-    Route::get('/temppH-today', [TemperatureController::class, 'get_temppH_today']);
-    Route::get('/tempm-today', [TemperatureController::class, 'get_tempm_today']);
+    Route::get('/all-temp-today', [TemperatureController::class, 'get_all_temp_today']);
 
     //? linear regression
     Route::get('/get-x-y', [TemperatureController::class, 'get_x_y']);
