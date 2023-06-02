@@ -49,7 +49,7 @@ void loop() {
 
   int    HTTP_PORT   = 80;
   String HTTP_METHOD = "GET";
-  char   HOST_NAME[] = "192.168.100.17"; // change to your PC's IP address // 192.168.254.114 // 192.168.100.17 // 192.168.100.10
+  char   HOST_NAME[] = "192.168.100.10"; // change to your PC's IP address // 192.168.254.114 // 192.168.100.17 // 192.168.100.10
   String PATH_NAME   = "/water_quality_ms/arduino/api.php"; //rfid_insert_user.php
   String val = "?tempc=";
   String val1 = "&tempf=";
